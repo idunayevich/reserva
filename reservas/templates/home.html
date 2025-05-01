@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+{% block title %}Inicio{% endblock %}
+{% block content %}
+{% if user.is_authenticated %}
+  <h1>¡Hola {{ user.username }}!</h1>
+  <h1>Bienvenido al Sistema de Reservas de Restaurantes</h1>
+  <p>Desde aquí podés gestionar tus reservas y restaurantes.</p>
+
+  <ul>
+    <li><a href="{% url 'reserva_list' %}">Ver Reservas</a></li>
+    <li><a href="{% url 'reserva_create' %}">Crear Nueva Reserva</a></li>
+    <li><a href="{% url 'restaurante_list' %}">Ver Restaurantes</a></li>
+    <li><a href="{% url 'restaurante_create' %}">Agregar Nuevo Restaurante</a></li>
+  </ul>
+  <p>Accedé a tus reservas o hacé una nueva desde el menú.</p>
+{% else %}
+  <h1>¡Bienvenido al Sistema de Reservas de Restaurantes!</h1>
+  <p>Gestioná tus reservas de forma rápida y sencilla.</p>
+  <p>Iniciá sesión o registrate para gestionar tus reservas.</p>
+{% endif %}
+{% endblock %}

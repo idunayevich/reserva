@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+{% block title %}Reservas{% endblock %}
+
+{% block content %}
+  <h1>Reservas</h1>
+
+  {% if object_list %}
+    <ul>
+      {% for reserva in object_list %}
+        <li>{{ reserva.fecha }} - {{ reserva.hora }} - {{ reserva.persona }}</li>
+      {% endfor %}
+    </ul>
+  {% else %}
+    <p>No hay reservas registradas.</p>
+    <a href="{% url 'reserva_create' %}">Crear una nueva reserva</a>
+  {% endif %}
+{% endblock %}

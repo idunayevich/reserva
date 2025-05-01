@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+
+{% block title %}Listado de Restaurantes{% endblock %}
+
+{% block content %}
+  <h1>Listado de Restaurantes</h1>
+
+  {% if object_list %}
+    <ul>
+      {% for restaurante in object_list %}
+        <li>{{ restaurante.nombre }} - {{ restaurante.tipo_comida }}</li>
+      {% endfor %}
+    </ul>
+  {% else %}
+    <p>No hay restaurantes registrados.</p>
+  {% endif %}
+
+  <a href="{% url 'restaurante_create' %}">Agregar restaurante</a>
+{% endblock %}

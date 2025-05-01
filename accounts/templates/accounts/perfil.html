@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+<div class="max-w-xl mx-auto mt-6">
+  <h2 class="text-xl font-bold mb-4">Perfil de {{ user.username }}</h2>
+
+  <div class="flex items-center gap-4 mb-4">
+    {% if user.perfil.avatar %}
+        <img src="{{ user.perfil.avatar.url }}" alt="Avatar" class="h-16 w-16 rounded-full border border-gray-300 object-cover">
+    {% else %}
+        <img src="{% static 'img/default-avatar.png' %}" alt="Avatar por defecto" class="h-16 w-16 rounded-full border border-gray-300 object-cover">
+    {% endif %}
+    <div>
+      <p><strong>Nombre:</strong> {{ user.first_name }}</p>
+      <p><strong>Apellido:</strong> {{ user.last_name }}</p>
+      <p><strong>Email:</strong> {{ user.email }}</p>
+    </div>
+  </div>
+
+  <a href="/accounts/profile/edit/">Editar perfil</a>
+  <a href="{% url 'cambiar_contrasena' %}">Cambiar contraseña</a>
+</div>
+{% endblock %}
