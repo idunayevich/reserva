@@ -39,7 +39,5 @@ python manage.py runserver
 ## Flujo de navegación
 - Home (/)
 - About (/about/)
-- Login (/login/)
-- Signup (/signup/)
-- Profile (/accounts/profile/)
-- Logout (/logout/)
+- Login (accounts/login/)
+- Signup (accounts/signup/)
