@@ -8,7 +8,8 @@
   {% if reservas %}
     <ul>
       {% for reserva in reservas %}
-        <li>{{ reserva.fecha }} - {{ reserva.hora }} - {{ reserva.restaurante }}</li>
+        <li>{{ reserva.dia|date:"d/m/Y" }} - {{ reserva.hora|time:"H:i" }} - {{ reserva.restaurante }} - 
+            {{ reserva.personas }} - {{ reserva.usuario.first_name }} {{ reserva.usuario.last_name }}</li>
       {% endfor %}
     </ul>
   {% else %}

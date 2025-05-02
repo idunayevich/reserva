@@ -9,12 +9,16 @@ class RestauranteCreateView(LoginRequiredMixin, CreateView):
     form_class = RestauranteForm
     template_name = 'reservas_app/formulario_restaurante.html'
     success_url = reverse_lazy('restaurante_list')
-
+    
 class ReservaCreateView(LoginRequiredMixin, CreateView):
     model = Reserva
     form_class = ReservaForm
     template_name = 'reservas_app/formulario_reserva.html'
     success_url = reverse_lazy('reserva_list')
+
+    def form_valid(self, form):
+        form.instance.usuario = self.request.user
+        return super().form_valid(form)
 
 class RestauranteListView(ListView):
     model = Restaurante

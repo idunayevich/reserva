@@ -15,11 +15,13 @@
         <li><a href="{% url 'reserva_list' %}">Reservas</a></li>
         <li><a href="{% url 'restaurante_list' %}">Restaurantes</a></li>
         <li><a href="{% url 'perfil_usuario' %}">Perfil</a></li>
-        </li><a href="{% url 'cambiar_contrasena' %}">Cambiar contraseña</a></li>
+        <li><a href="{% url 'cambiar_contrasena' %}">Cambiar contraseña</a></li>
         <li>
             <form action="{% url 'logout' %}" method="post" style="display:inline;">
               {% csrf_token %}
-              <button type="submit" style="background:none;border:none;padding:0;margin:0;color:blue;cursor:pointer;text-decoration:underline;">Cerrar sesión</button>
+              <button type="submit" style="background:none; border:none; padding:0; margin:0; color:white; cursor:pointer;">
+                Cerrar sesión
+              </button>
             </form>
           </li>
         {% if request.user.perfil.avatar %}

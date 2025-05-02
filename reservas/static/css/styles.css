@@ -30,4 +30,12 @@ body {
   .contenido {
     padding: 2em;
   }
+
+  .avatar {
+    width: 64px;
+    height: 64px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 2px solid #D1D5DB; /* o el color que prefieras */
+  }
   

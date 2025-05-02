@@ -8,7 +8,7 @@
   {% if object_list %}
     <ul>
       {% for restaurante in object_list %}
-        <li>{{ restaurante.nombre }} - {{ restaurante.tipo_comida }}</li>
+        <li>{{ restaurante.nombre }} - {{ restaurante.tipo_comida }} - {{ restaurante.direccion }}</li>
       {% endfor %}
     </ul>
   {% else %}
